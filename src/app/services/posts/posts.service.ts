@@ -14,19 +14,19 @@ export class PostsService {
   }
 
   getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/api/posts/`);
+    return this.http.get<any[]>(`${this.apiUrl}/posts/`);
   }
 
   createPost(post: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/api/posts`, post);
+    return this.http.post<any>(`${this.apiUrl}/posts`, post);
   }
 
   deletePost(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/api/posts/${id}`);
+    return this.http.delete<any>(`${this.apiUrl}/posts/${id}`);
   }
 
   updatePost(post: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/api/posts`, post);
+    return this.http.put<any>(`${this.apiUrl}/posts`, post);
   }
 
 }
