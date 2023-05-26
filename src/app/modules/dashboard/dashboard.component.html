@@ -1,0 +1,41 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Your Brand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard">Home</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.getUserTypeForAuthorization() == 2">
+            <a class="nav-link"  routerLink="/dashboard/post/list">Posts</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.getUserTypeForAuthorization() == 1">
+            <a class="nav-link" routerLink="/dashboard/users/list">User</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.getUserTypeForAuthorization() == 2">
+            <button class="nav-link"   (click)="openDialoq()">update Profile</button>
+          </li>
+
+
+          <li class="nav-item text-right">
+            <button class="nav-link" (click)="logout()">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="bg-light py-4">
+  <div class="container text-center">
+    <span>&copy; 2023 Your Company. All rights reserved.</span>
+  </div>
+</footer>

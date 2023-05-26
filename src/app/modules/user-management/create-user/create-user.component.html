@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type-="text" class="form-control" id="name"
+               placeholder="Enter name"
+               [(ngModel)]="name"
+               name="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type-="text" class="form-control" id="email"
+               placeholder="Enter email"
+               [(ngModel)]="email"
+               name="email">
+      </div>
+      <div class="form-group" *ngIf="!buttonName">
+        <label for="password">Password</label>
+        <input type="password" class="form-control"
+               id="password"
+               placeholder="Enter password"
+               [(ngModel)]="password"
+               name="password">
+      </div>
+      <div class="form-group" *ngIf="!buttonName">
+        <label for="password_confirmation">Password Confirmation</label>
+        <input type="password"
+               class="form-control"
+               id="password_confirmation"
+               placeholder="Enter password confirmation"
+               [(ngModel)]="password_confirmation"
+               name="password_confirmation">
+        <i class="fa fa-eye" (click)="show()"></i>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary" *ngIf="!buttonName" (click)="createUser()">Submit</button>
+      <button class="btn btn-primary" *ngIf="buttonName" (click)="UpdateUser()">Update</button>
+      <button class="btn btn-primary" (click)="close()">Cancel</button>
+    </div>
+
+  </div>
+</div>

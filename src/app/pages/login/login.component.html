@@ -1,0 +1,21 @@
+<div class="center-box">
+  <div class="container">
+    <h2 class="text-center mb-4">Login</h2>
+    <form (ngSubmit)="login()" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Email</label>
+        <input id="username" type="text" [(ngModel)]="email" name="username" class="form-control" placeholder="Username"
+               required>
+        <div class="invalid-feedback">Please enter a Email.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" type="password" [(ngModel)]="password" name="password" class="form-control"
+               placeholder="Password" required>
+        <div class="invalid-feedback">Please enter a password.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="button" class="btn btn-secondary" (click)="register()">Register</button>
+    </form>
+  </div>
+</div>
